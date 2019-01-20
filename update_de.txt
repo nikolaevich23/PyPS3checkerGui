@@ -1,0 +1,4 @@
+PPCG 1.0.0;
+Liste der Anderungen:
+ - beta
+ - Kleinere Anderungen
