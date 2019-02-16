@@ -1,4 +1,3 @@
-PPCG 1.0.0;
+PPCG 1.0.2;
 Liste der Anderungen:
- - beta
- - Kleinere Anderungen
+ - Unterst?tzung 4.84
