@@ -1,3 +1,3 @@
-PPCG 1.0.3;
+PPCG 1.0.4;
 Liste der Anderungen:
- - Unterst?tzung 4.85
+ - Unterst?tzung 4.86
