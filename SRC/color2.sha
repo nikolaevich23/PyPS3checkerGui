@@ -1,0 +1,111 @@
+Make(delphi)
+ver(4.05 build 186)
+Add(MainForm,2953706,28,91)
+{
+ Width=686
+ Height=644
+ link(onCreate,6870680:doEvent1,[])
+}
+Add(Dir,4439592,112,42)
+{
+}
+Add(StrCat,8596604,112,105)
+{
+ Str2="dump-11-12.hex.checklog.txt"
+ link(onStrCat,13216523:doOpen,[])
+ link(Str1,4439592:CurrentDir,[])
+}
+Add(FileStream,13216523,175,105)
+{
+ link(onLoad,9556613:doConvert,[])
+}
+Add(Convertor,9556613,224,105)
+{
+ Mode=11
+ link(onResult,13783703:doEvent1,[(275,111)(275,132)])
+}
+Add(RichEdit,23272,812,231)
+{
+ Width=665
+ Height=605
+ Font=[Arial,8,0,0,1]
+ ScrollBars=3
+ Point(doSave)
+ Point(doLoad)
+ link(Str,12715242:Value,[(818,209)(792,209)])
+ link(Color,3256420:Value,[(825,198)(862,198)])
+}
+Add(Memory,12715242,786,160)
+{
+}
+Add(DoData,330540,758,118)
+{
+ Data=Integer(255)
+ link(onEventData,13581398:doWork1,[(823,124)])
+}
+Add(Hub,11051157,602,119)
+{
+ InCount=2
+ OutCount=3
+ PColor(onEvent2,65280)
+ link(onEvent1,330540:doData,[(687,125)(687,124)])
+ link(onEvent2,12715242:doValue,[(654,132)(654,153)(731,153)(731,166)])
+}
+Add(RE_Search,15441092,343,140)
+{
+ Expression="WARNING!"
+ link(onMatch,11051157:doEvent1,[(485,146)(485,125)])
+}
+Add(InfoTip,939025,273,0)
+{
+ Info=#38:Сначала проверяем текст на ;WARNING!!;|66:Если есть совпадение, переходим к разделению, если совпадений нет.|40:То просто вставляем текст без изменений.|
+ Font=[MS Sans Serif,8,1,0,1]
+ Width=169
+ Height=207
+}
+Add(InfoTip,1506446,476,56)
+{
+ Info=#28:Разбиваем текст на три части|
+ Font=[MS Sans Serif,8,1,0,1]
+ Width=113
+ Height=109
+}
+Add(InfoTip,13934692,903,77)
+{
+ Info=#36:Первую часть добавляем без изменений|0:|13:Вторую часть:|54:Сначала заносим в memory через doData номер цвет(255),|24:затем передаем сам текст|0:|13:Третью часть:|62:Сначала сбрасываем memory в первоначальное состояние, цвет(0),|20:Затем передаем текст|0:|
+ Font=[MS Sans Serif,8,1,0,1]
+ Width=407
+ Height=193
+}
+Add(Hub,6870680,84,105)
+{
+ link(onEvent1,8596604:doStrCat,[])
+ link(onEvent2,23272:doAdd,[(455,118)(455,237)])
+}
+Add(If_else,7394439,343,203)
+{
+ Op2=String(;WARNING!!;)
+ link(onFalse,4634413:doValue,[(458,216)(458,194)])
+ link(Op1,15441092:Match,[])
+}
+Add(Hub,13783703,294,126)
+{
+ link(onEvent1,15441092:doExec,[(326,132)(326,146)])
+ link(onEvent2,7394439:doCompare,[(326,139)(326,209)])
+}
+Add(Memory,4634413,541,188)
+{
+}
+Add(DoData,13757933,716,181)
+{
+ Data=Integer(0)
+ link(onEventData,13581398:doWork2,[(756,187)(756,152)])
+}
+Add(Memory,3256420,856,146)
+{
+ Default=Integer(0)
+}
+Add(HubEx,13581398,819,146)
+{
+ link(onEvent,3256420:doValue,[])
+}

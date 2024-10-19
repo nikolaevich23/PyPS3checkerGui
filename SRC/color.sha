@@ -1,0 +1,133 @@
+Make(delphi)
+ver(4.05 build 186)
+Add(MainForm,2953706,28,91)
+{
+ Width=454
+ Height=357
+ link(onCreate,8596604:doStrCat,[])
+}
+Add(Dir,4439592,112,42)
+{
+}
+Add(StrCat,8596604,112,105)
+{
+ Str2="log.txt"
+ link(onStrCat,13216523:doOpen,[])
+ link(Str1,4439592:CurrentDir,[])
+}
+Add(FileStream,13216523,175,105)
+{
+ link(onLoad,9556613:doConvert,[])
+}
+Add(Convertor,9556613,231,105)
+{
+ Mode=11
+ link(onResult,6870680:doEvent1,[])
+}
+Add(MultiStrData,988443,525,112)
+{
+ Count=3
+ PColor(onPart1,65280)
+ link(onPart1,8950452:doWork1,[(692,118)])
+ link(onPart2,11051157:doEvent1,[])
+ link(onPart3,9373506:doEvent1,[(586,132)(586,146)])
+}
+Add(RichEdit,23272,812,231)
+{
+ Left=65
+ Top=30
+ Width=305
+ Height=235
+ Font=[Arial,8,0,0,1]
+ FileName="1.rtf"
+ ScrollBars=3
+ Point(doSave)
+ Point(doLoad)
+ link(Str,12715242:Value,[(818,209)(804,209)])
+ link(Color,5418994:Value,[])
+}
+Add(Memory,5418994,819,119)
+{
+ Default=Integer(0)
+}
+Add(Memory,12715242,798,154)
+{
+ link(onData,13160469:In,[])
+}
+Add(DoData,330540,756,119)
+{
+ Data=Integer(255)
+ link(onEventData,5418994:doValue,[])
+}
+Add(Hub,11051157,602,119)
+{
+ PColor(onEvent2,65280)
+ link(onEvent1,330540:doData,[])
+ link(onEvent2,8950452:doWork2,[])
+}
+Add(Hub,9373506,658,140)
+{
+ PColor(onEvent2,65280)
+ link(onEvent1,5418994:doClear,[(721,146)(721,132)])
+ link(onEvent2,9362706:doWork2,[])
+}
+Add(LineBreak,14379177,693,231)
+{
+ link(Out,14131264:doEvent1,[])
+ Primary=[13160469,175,-77]
+}
+Add(HubEx,9362706,688,147)
+{
+ Angle=1
+ PColor(onEvent,65280)
+ link(onEvent,12715242:doValue,[(692,160)])
+}
+Add(HubEx,8950452,688,126)
+{
+ Angle=1
+ PColor(onEvent,65280)
+ link(onEvent,9362706:doWork1,[])
+}
+Add(RE_Search,15441092,336,105)
+{
+ Expression=";WARNING!!;"
+}
+Add(If_else,7394439,336,175)
+{
+ Op2=String(;WARNING!!;)
+ link(onTrue,988443:doSplit,[(446,181)(446,118)])
+ link(onFalse,14131264:doEvent2,[(566,188)(566,244)])
+ link(Op1,15441092:Match,[])
+}
+Add(Hub,6870680,280,105)
+{
+ link(onEvent1,15441092:doExec,[])
+ link(onEvent2,7394439:doCompare,[(315,118)(315,181)])
+}
+Add(Hub,14131264,763,231)
+{
+ InCount=2
+ OutCount=1
+ link(onEvent1,23272:doAdd,[])
+}
+Add(InfoTip,939025,273,0)
+{
+ Info=#38:Сначала проверяем текст на ;WARNING!!;|66:Если есть совпадение, переходим к разделению, если совпадений нет.|40:То просто вставляем текст без изменений.|
+ Font=[MS Sans Serif,8,1,0,1]
+ Width=169
+ Height=207
+}
+Add(InfoTip,1506446,476,56)
+{
+ Info=#28:Разбиваем текст на три части|
+ Font=[MS Sans Serif,8,1,0,1]
+ Width=113
+ Height=109
+}
+Add(InfoTip,13934692,903,77)
+{
+ Info=#36:Первую часть добавляем без изменений|0:|13:Вторую часть:|54:Сначала заносим в memory через doData номер цвет(255),|24:затем передаем сам текст|0:|13:Третью часть:|62:Сначала сбрасываем memory в первоначальное состояние, цвет(0),|20:Затем передаем текст|0:|
+ Font=[MS Sans Serif,8,1,0,1]
+ Width=407
+ Height=193
+}
