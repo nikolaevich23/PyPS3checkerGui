@@ -1,3 +1,5 @@
-PPCG 12.03.2024;
+PPCG 10/19/2024;
 List of changes:
- - support 4.91
+ - added information about IDPS 
+ - added information about Product code: CEX, DEX and others (based on idps in 2 places)
+ - minor changes in gui
