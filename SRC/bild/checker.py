@@ -132,6 +132,13 @@ def getMD5(file, offset, length):
 	h.update(getDatas(file, offset, length))
 	return h.hexdigest()
 
+def md5_checksum(filepath):
+	hash_md5 = hashlib.md5()
+	with open(filepath, "rb") as file:
+		for chunk in iter(lambda: file.read(4096), b""):
+			hash_md5.update(chunk)
+	return hash_md5.hexdigest()
+
 def printcolored(color, text):
 	# available color: BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET
 	# available style: DIM, NORMAL, BRIGHT, RESET_ALL
@@ -656,11 +663,13 @@ if __name__ == "__main__":
 		print("Product Code1: %s" % ConsoleType(PC))
 		print("Product Code2: %s" % ConsoleType(PC2))
 	if CID.startswith("0FFF"): printcolored("cyan", "This is a refurbished console!")
-	
-	print()
+		
 	print()
 	print()
 	print("******* Checks completed *******")
+	print()
+	file_name = os.path.basename(inputFile)
+	print("MD5 %s: %s" % (file_name, md5_checksum(inputFile).upper()))
 	print()
 	print("Total number of checks =", checkCount)
 	print("Number of dangers =", end=' ')
