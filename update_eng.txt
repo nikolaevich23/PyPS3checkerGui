@@ -1,5 +1,3 @@
-PPCG 10/19/2024;
+PPCG 12/03/2025;
 List of changes:
- - added information about IDPS 
- - added information about Product code: CEX, DEX and others (based on idps in 2 places)
- - minor changes in gui
+ - add 4.92 hash

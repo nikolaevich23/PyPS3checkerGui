@@ -1,5 +1,3 @@
-PPCG 19.10.2024;
+PPCG 12.03.2025;
 Liste der Änderungen:
- - Informationen zu IDPS hinzugefügt 
- - Informationen zum Produktcode hinzugefügt: CEX, DEX und andere (basierend auf IdPs an 2 Stellen)
- - Kleinere Änderungen in der GUI
+ - 4.92
