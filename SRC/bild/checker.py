@@ -17,6 +17,7 @@ import sys
 import re
 import hashlib
 import textwrap
+import shutil
 from xml.etree import ElementTree
 from collections import Counter
 
@@ -214,6 +215,10 @@ if __name__ == "__main__":
 
 	# parse file
 	print("Loading file \"%s\" to memory..." % inputFile)
+	if os.path.getsize(inputFile) > 250609664:
+		shutil.copy(inputFile, inputFile+'_original.hex')
+		with open(inputFile,"r+b") as f:
+			f.truncate(250609664)
 	with open(inputFile,"rb") as f:
 		rawfiledata = f.read()
 
@@ -230,6 +235,7 @@ if __name__ == "__main__":
 	# parse file type:
 	isReversed = ""
 	fileSize = len(rawfiledata)
+    
 	flashType = ""
 	for dump_type in chktree.findall('.//dump_type'):
 		if fileSize == int(dump_type.attrib.get("size")):
