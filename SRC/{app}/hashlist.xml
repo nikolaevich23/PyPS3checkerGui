@@ -2,6 +2,7 @@
 
 <root>
   <type name="TRVK_PRG"> <!-- Matches RL_FOR_PROGRAM.img -->
+    <hash name="4.93 (from PUP)">4BA3C1AB6A71BC61FC263B205F763351</hash>
     <hash name="4.92 (from PUP)">99CE9EC3816AE991B71626547083DF9C</hash>
     <hash name="4.91 (from PUP)">D71D052CC0F640869F91D6D859E45CA0</hash>
     <hash name="4.90 (from PUP)">A25E30004F3AC8F531E962F8F7D855E9</hash>
@@ -187,6 +188,7 @@
 
   <type name="ROS"> <!-- Matches Raw COS -->
   <!-- PATCHES -->
+    <hash name="4.93 CEX Patched (Evilnat based)">AFE831050C31EFB381F9BE4098F1834C</hash>
     <hash name="4.92 CEX Patched (Evilnat based)">36BD44795F06B59EECBDAAD6982BE426</hash>
     <hash name="4.91 CEX Patched (Evilnat based)">3C19A6855490B5ED471764962E9FCD83</hash>
     <hash name="4.90 CEX Patched (Evilnat based)">8CF9701297129151E22EDA39C1D2670F</hash>
@@ -225,6 +227,7 @@
     <hash name="3.55 CEX Patched">F162E0D72EBA0F46B7FB36E6AAB63958</hash>
   <!-- OFW -->
    <!-- common CEX/DEX/SEX -->
+    <hash name="4.93 CEX/SEX OFW/HFW">7C54192073537CD1C448971547086423</hash>
     <hash name="4.92 CEX/SEX OFW/HFW">3F3081FEBE238CD4426E735DCF009923</hash>
     <hash name="4.91 CEX/SEX OFW/HFW">AFA10D61A1156CF56A994CA85E3B4777</hash>
     <hash name="4.90 CEX/SEX OFW/HFW">AB9C9700445CCD1AB9215AF8C28EE0F9</hash>
@@ -388,6 +391,12 @@
   <!-- MISC -->
     <hash name="2.43 Leaked JIG">4C503EC4737A08F79FD8B4A4DFE0F31F</hash>
   <!-- CFW/MFW -->
+    <hash name="4.93 Evilnat Cobra CEX noBD">52AD418FF8B09BEA340491D4083AAF30</hash>
+    <hash name="4.93 Evilnat Cobra CEX">505788E2430D1573D925E713EA58CA23</hash>
+    <hash name="4.93 Evilnat Cobra D-PEX no BD">02515942673C5E989DDC5F002906372E</hash>
+    <hash name="4.93 Evilnat Cobra D-PEX">319F647C9895091DA5CEB62C3959E622</hash>
+    <hash name="4.93 Evilnat Cobra PEX noBD">D82BD4DB247A8FF1152AB316631A6947</hash>
+    <hash name="4.93 Evilnat Cobra PEX">53C7D75D45D827A9D3F4A388915D228E</hash>
     <hash name="4.92.2 Evilnat Cobra CEX noBD">385147CA1AB6EB14B519313364F04462</hash>
     <hash name="4.92.2 Evilnat Cobra CEX">469B1AED34C9ED565E1A6D5B52CBFF4C</hash>
     <hash name="4.92.2 Evilnat Cobra D-PEX no BD">E035D94E088B1AD969330AE41F7F2D6F</hash>
