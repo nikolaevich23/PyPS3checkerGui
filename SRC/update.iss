@@ -2,7 +2,7 @@
 
 #define MyApp "PyPS3 Ñhecker Gui"
 #define ShortName "PS3ÑheckGui"
-#define Version "1.0.0"
+#define Version "4.93"
 #define Publisher "by in1975"
 #define Team "PSPx Team"
 #define URL "http://www.pspx.ru/forum/showthread.php?t=107194"
