@@ -1,4 +1,4 @@
-# PyPS3checkerGui 4.92
+# PyPS3checkerGui 4.93
 Gui for PyPS3checker
 
 ### Актуальные хеш-листы
